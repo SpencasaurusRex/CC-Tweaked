@@ -95,6 +95,9 @@ public class TurtleAPI implements ILuaAPI
             "inspectUp",
             "inspectDown",
             "getItemDetail",
+            "x",
+            "y",
+            "z",
         };
     }
 
@@ -356,7 +359,12 @@ public class TurtleAPI implements ILuaAPI
 
                 return new Object[] { table };
             }
-
+            case 42: // x
+                return new Object[] { m_turtle.getPosition().getX() };
+            case 43: // y
+                return new Object[] { m_turtle.getPosition().getY() };
+            case 44: // z
+                return new Object[] { m_turtle.getPosition().getZ() };
             default:
                 return null;
         }
